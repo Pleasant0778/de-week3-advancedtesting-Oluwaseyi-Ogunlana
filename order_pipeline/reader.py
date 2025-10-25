@@ -24,7 +24,7 @@ class OrderRecord:
         return asdict(self)
 
 
-class Reader():
+class Reader:
 
   def __init__(self, file_path:str, file_format:str = None):
 
