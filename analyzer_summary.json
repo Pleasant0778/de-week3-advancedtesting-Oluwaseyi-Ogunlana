@@ -1,0 +1,9 @@
+{
+    "total_revenue": 6126.48,
+    "average_revenue": 1225.3,
+    "payment_status_summary": {
+        "paid": 5,
+        "pending": 2,
+        "refunded": 1
+    }
+}
