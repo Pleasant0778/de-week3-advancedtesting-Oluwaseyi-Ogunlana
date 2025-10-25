@@ -161,7 +161,7 @@ python -m order_pipeline.pipeline
 
 ```
 
-### 3. Example Output (console/log)
+### 3. Example Output (with logging.info)
 ```
 2025-10-25 11:46:57,058 - INFO:Welcome to Order Pipeline!!!
 2025-10-25 11:46:57,058 - INFO:Reader class called to read C:/Users/Personal/data_epic/week_3/shoplink.json with json format
