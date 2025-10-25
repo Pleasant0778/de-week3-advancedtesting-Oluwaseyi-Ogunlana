@@ -29,7 +29,7 @@ class Validator():
         if all(no_valid_col):
            self.required_data.append(data)
       else:
-         logger.debug('The length of the row is %s, it not up to what is required %s', len(data.keys()), len(Validator.required_fields))
+         logger.info('The length of the row is %s, it not up to what is required %s', len(data.keys()), len(Validator.required_fields))
 
     logger.info('Checked for valid records!!!')
 
