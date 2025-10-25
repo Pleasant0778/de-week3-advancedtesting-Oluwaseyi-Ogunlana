@@ -163,40 +163,46 @@ python -m order_pipeline.pipeline
 
 ### 3. Example Output (with logging.info)
 ```
-2025-10-25 11:46:57,058 - INFO:Welcome to Order Pipeline!!!
-2025-10-25 11:46:57,058 - INFO:Reader class called to read C:/Users/Personal/data_epic/week_3/shoplink.json with json format
-2025-10-25 11:46:57,059 - INFO:Total file read is 12
-2025-10-25 11:46:57,059 - INFO:The length of the row is 6, it not up to what is required 7
-2025-10-25 11:46:57,060 - INFO:Checked for valid records!!!
-2025-10-25 11:46:57,060 - INFO:About to extract numberic data!!!
-2025-10-25 11:46:57,060 - INFO:The number of Invalid and Optional skipped records is: 3
-2025-10-25 11:46:57,060 - INFO:The number of valid records left is: 8
-2025-10-25 11:46:57,060 - INFO:Done with validating data!!!
-2025-10-25 11:46:57,061 - INFO:Converting string literals that are digit to numeric
-2025-10-25 11:46:57,061 - INFO:Done converting records to numeric
-2025-10-25 11:46:57,061 - INFO:Normalizing string data to lower case
-2025-10-25 11:46:57,061 - INFO:Done normalizing string data
-2025-10-25 11:46:57,062 - INFO:Recalculating total!!!
-2025-10-25 11:46:57,062 - INFO:Done recalculating totals!!!
-2025-10-25 11:46:57,062 - INFO:normalizing skipped record
-2025-10-25 11:46:57,062 - INFO:...checking skipped rows
-2025-10-25 11:46:57,062 - INFO:Converting string literals that are digit to numeric
-2025-10-25 11:46:57,063 - INFO:Done converting records to numeric
-2025-10-25 11:46:57,063 - INFO:Normalizing string data to lower case
-2025-10-25 11:46:57,063 - INFO:Done normalizing string data
-2025-10-25 11:46:57,063 - INFO:Checking optional field to compute the value
-2025-10-25 11:46:57,063 - INFO:The size of skipped ros is 3:
+025-10-25 15:41:34,325 - INFO:Reading data...
+2025-10-25 15:41:34,325 - INFO:Welcome to Order Pipeline!!!
+2025-10-25 15:41:34,326 - INFO:Reader class called to read C:/Users/Personal/data_epic/week_3/shoplink.json with json format
+2025-10-25 15:41:34,326 - INFO:Validating data...
+2025-10-25 15:41:34,326 - INFO:Total file read is 12
+2025-10-25 15:41:34,327 - INFO:The length of the row is 6, it not up to what is required 7
+2025-10-25 15:41:34,327 - INFO:Checked for valid records!!!
+2025-10-25 15:41:34,327 - INFO:About to extract numberic data!!!
+2025-10-25 15:41:34,327 - INFO:The number of Invalid and Optional skipped records is: 3
+2025-10-25 15:41:34,327 - INFO:The number of valid records left is: 8
+2025-10-25 15:41:34,327 - INFO:Done with validating data!!!
+2025-10-25 15:41:34,328 - INFO:Transforming data...
+2025-10-25 15:41:34,328 - INFO:Converting string literals that are digit to numeric
+2025-10-25 15:41:34,328 - INFO:Done converting records to numeric
+2025-10-25 15:41:34,328 - INFO:Normalizing string data to lower case
+2025-10-25 15:41:34,328 - INFO:Done normalizing string data
+2025-10-25 15:41:34,329 - INFO:Recalculating total!!!
+2025-10-25 15:41:34,329 - INFO:Done recalculating totals!!!
+2025-10-25 15:41:34,329 - INFO:normalizing skipped record
+2025-10-25 15:41:34,330 - INFO:...checking skipped rows
+2025-10-25 15:41:34,330 - INFO:Converting string literals that are digit to numeric
+2025-10-25 15:41:34,330 - INFO:Done converting records to numeric
+2025-10-25 15:41:34,330 - INFO:Normalizing string data to lower case
+2025-10-25 15:41:34,330 - INFO:Done normalizing string data
+2025-10-25 15:41:34,330 - INFO:Checking optional field to compute the value
+2025-10-25 15:41:34,331 - INFO:The size of skipped ros is 3:
 [{'order_id': 'ORD005', 'timestamp': '2025-10-19T08:20:00Z', 'item': '', 'quantity': 1, 'price': 45.0, 'total': 45, 'payment_status': 'refunded'}, {'order_id': 'ORD007', 'timestamp': '2025-10-19T08:30:00Z', 'item': 'power bank', 'quantity': 'N/A', 'price': 25.0, 'total': 50.0, 'payment_status': 'paid'}, {'order_id': 'ORD011', 'timestamp': '19/10/2025 08:10 AM', 'item': 'usb cable', 'quantity': 8.2, 'price': None, 'total': 20.5, 'payment_status': 'pending'}]
-2025-10-25 11:46:57,063 - INFO:The size of skipped rows after checking for optional field is 1:
-2025-10-25 11:46:57,063 - INFO:The size of additional rows from skipped rows 2:
-2025-10-25 11:46:57,063 - INFO:Checking and removing duplicates
-2025-10-25 11:46:57,063 - INFO:Done removing duplicate
-2025-10-25 11:46:57,064 - INFO:Size before removing duplicate 10
-2025-10-25 11:46:57,064 - INFO:Size after removing duplicate 9
-2025-10-25 11:46:57,064 - INFO:The final required data with size 9 is ready!!!
-2025-10-25 11:46:57,064 - INFO:Analysing loaded data
-2025-10-25 11:46:57,064 - INFO:Exporting data as shoplink_cleaned.json
-2025-10-25 11:46:57,066 - INFO:Exporting data as analyzer_summary.json
+2025-10-25 15:41:34,331 - INFO:The size of skipped rows after checking for optional field is 1:
+2025-10-25 15:41:34,332 - INFO:The size of additional rows from skipped rows 2:
+2025-10-25 15:41:34,332 - INFO:Checking and removing duplicates
+2025-10-25 15:41:34,332 - INFO:Done removing duplicate
+2025-10-25 15:41:34,332 - INFO:Size before removing duplicate 10
+2025-10-25 15:41:34,332 - INFO:Size after removing duplicate 9
+2025-10-25 15:41:34,332 - INFO:The final required data with size 9 is ready!!!
+2025-10-25 15:41:34,333 - INFO:Analyzing data...
+2025-10-25 15:41:34,333 - INFO:Analysing loaded data
+2025-10-25 15:41:34,333 - INFO:Exporting result...
+2025-10-25 15:41:34,333 - INFO:Exporting data as shoplink_cleaned.json
+2025-10-25 15:41:34,334 - INFO:Exporting data as analyzer_summary.json
+2025-10-25 15:41:34,336 - INFO:End of Order pipeline!!!
 ```
 
 ---

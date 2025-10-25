@@ -4,30 +4,39 @@ from order_pipeline.validator import Validator
 from order_pipeline.transformer import Transformer
 from order_pipeline.analyzer import Analyzer
 from order_pipeline.exporter import Exporter
+import logging
 
+logger = logging.getLogger(__name__)
+logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s : %(message)s" )
 
 
 class OrderPipeline:
     def __init__(self,  input_file_path: str, input_file_format: str = 'json',output_file_path: str = None):
         
         self.reader = Reader(input_file_path, input_file_format)
+        
         self.validator = Validator()
+        
         self.transformer = Transformer()
+        
         self.analyzer = Analyzer()
+        
         self.exporter = Exporter()
+        
     def run_pipeline(self):
+        logging.info('Reading data...')
         read_data = list(self.reader.read_data())
-        
+        logging.info('Validating data...')
         val_data = self.validator.validate_data(read_data)
-        
+        logging.info('Transforming data...')
         tran_data= self.transformer.transform(val_data, self.validator.rows_to_skip)
-
+        logging.info('Analyzing data...')
         analysed_data = self.analyzer.compute(tran_data)
-        
+        logging.info('Exporting result...')
         self.exporter.export_data(tran_data,output_file_path)
 
         self.exporter.export_data(analysed_data,'analyzer_summary.json')
-
+        logging.info('End of Order pipeline!!!')
         #print(self.validator.rows_to_skip)
         #print('#####')
         #print(self.transformer.rows_to_skip)

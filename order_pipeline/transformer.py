@@ -13,7 +13,7 @@ logging.basicConfig(
 )
 
 
-class Transformer():
+class Transformer:
 
   text_field = ['item','payment_status']
 

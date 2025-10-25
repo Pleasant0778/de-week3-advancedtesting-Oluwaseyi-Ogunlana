@@ -10,7 +10,7 @@ logging.basicConfig(
 
 )
 
-class Validator():
+class Validator:
 
   required_fields = ['order_id', 'timestamp', 'item', 'quantity', 'price', 'payment_status', 'total']
   positive_fields = ['quantity','price','total']
