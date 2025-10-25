@@ -3,7 +3,7 @@
     "average_revenue": 1225.3,
     "payment_status_summary": {
         "paid": 5,
-        "pending": 2,
+        "pending": 3,
         "refunded": 1
     }
 }
