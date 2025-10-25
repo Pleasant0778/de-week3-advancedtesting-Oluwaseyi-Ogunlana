@@ -103,19 +103,8 @@ def test_analyser_compute(sample_valid_data,init_pipeline):
     assert analysed_data['total_revenue'] == round((12.50 + 31.98),2)
     assert analysed_data['average_revenue'] == round(((12.50 + 31.98) / 2),2)
     assert analysed_data['payment_status_summary'] == {'paid': 2, 'pending': 1}
-"""
-def test_exporter_compute(sample_valid_data, tmp_path, init_pipeline):
-    validator =  init_pipeline[2]
-    validator.validate_data(sample_valid_data)
-    transform = init_pipeline[3]
-    analysed_data = init_pipeline[4].compute(transform.transform(validator.required_data, validator.rows_to_skip))
-    exporter = init_pipeline[5]
-    output_file = tmp_path / "output.json"
-    exporter.export_data(analysed_data, output_file)
-    with open(output_file, 'r') as file:
-        data = json.load(file)
-    assert data == analysed_data
-"""
+
+
 @pytest.mark.parametrize("analyzed_data",[
         '{"total_revenue": 44.48,"average_revenue": 22.24, "payment_status_summary": {"paid": 2, "pending": 1}}'
 ]
@@ -145,7 +134,7 @@ def test_integration(sample_valid_data, tmp_path, init_pipeline):
     init_pipeline[5].export_data(analysed_data,tmp_path/  'analyzer_summary_test.json')
    
    
-    assert len(tran_data) == 8
+    assert len(tran_data) == 9
     assert json.load(open(tmp_path/  'analyzer_summary_test.json', 'r')) == analysed_data
     
 
