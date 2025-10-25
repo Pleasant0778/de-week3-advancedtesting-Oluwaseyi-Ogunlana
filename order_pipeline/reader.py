@@ -26,7 +26,7 @@ class OrderRecord:
 
 class Reader():
 
-  def __init__(self, file_path:str, file_format:str = "json"):
+  def __init__(self, file_path:str, file_format:str = None):
 
     self.file_path  = file_path
     self.file_format = file_format
@@ -37,7 +37,7 @@ class Reader():
     logger.info("Welcome to Order Pipeline!!!")
     logger.info("Reader class called to read %s with %s format", self.file_path, self.file_format)
     if self.file_format != 'json':
-        logger.debug("The file format %s provided is not supported by the reader", self.file_format)
+        logger.info("The file format %s provided is not supported by the reader", self.file_format)
         raise ValueError('The file format provided is not supported by the reader')
     else:
         try:

@@ -88,5 +88,26 @@
         "price": 3,
         "total": 15,
         "payment_status": "refunded"
-    }
+    },
+    
+  {
+    "order_id": "ORD003",
+     "timestamp": "2025-10-19T08:10:00Z",
+     "item": "Usb Cable",
+     "quantity": 3,
+     "price": 5.0,
+     "total": 15.0,
+     "payment_status": "pending"
+  },
+  
+  {
+    "order_id": "ORD011", 
+    "timestamp": "19/10/2025 08:10 AM",
+    "item": "USB Cable", 
+    "quantity": 8.2, 
+    "price":null, 
+    "total": "$20.50", 
+    "payment_status": "pending" 
+  }
+
 ]

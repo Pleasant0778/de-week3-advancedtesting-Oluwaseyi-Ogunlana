@@ -7,9 +7,10 @@ from order_pipeline.exporter import Exporter
 
 
 
-class OrderPipeline():
-    def __init__(self,  input_file_path: str, file_format: str = 'json',output_file_path: str = None):
-        self.reader = Reader(input_file_path, file_format)
+class OrderPipeline:
+    def __init__(self,  input_file_path: str, input_file_format: str = 'json',output_file_path: str = None):
+        
+        self.reader = Reader(input_file_path, input_file_format)
         self.validator = Validator()
         self.transformer = Transformer()
         self.analyzer = Analyzer()
@@ -27,16 +28,18 @@ class OrderPipeline():
 
         self.exporter.export_data(analysed_data,'analyzer_summary.json')
 
-        print(self.validator.rows_to_skip)
-        print('#####')
-        print(self.transformer.rows_to_skip)
+        #print(self.validator.rows_to_skip)
+        #print('#####')
+        #print(self.transformer.rows_to_skip)
         
 
 
 
 if __name__ == "__main__":
     input_file_path = 'C:/Users/Personal/data_epic/week_3/shoplink.json'
+    #input_file_path = 'C:/Users/Personal/data_epic/week_3/test_json.json'
     output_file_path = 'shoplink_cleaned.json'
+    #output_file_path = 'test_json_cleaned.json'
     file_format = 'json'
 
     orderpipeline = OrderPipeline(input_file_path, file_format, output_file_path)
